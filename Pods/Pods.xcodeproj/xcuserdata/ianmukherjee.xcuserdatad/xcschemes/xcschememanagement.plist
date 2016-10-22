@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Koloda.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Pulse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CDCB3FD0B0DD9D571E5ACC5672E954B</key>
+		<key>2692A60CA9509B2E2A543556E170DCB4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>59B9D180BB6A2381EEFAD3997AE76781</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>80CBCC225074FD190F9BEA2940592423</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C45290004E0078130C91A71711094467</key>
 		<dict>
 			<key>primary</key>
 			<true/>

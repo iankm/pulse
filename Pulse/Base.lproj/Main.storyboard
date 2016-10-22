@@ -180,16 +180,6 @@
                                 <exclude reference="qN4-b0-4hM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="FW8-yB-jzw"/>
-                                <exclude reference="iQN-1E-o01"/>
-                                <exclude reference="rKQ-Tv-YtR"/>
-                                <exclude reference="8Fe-cv-Yf9"/>
-                                <exclude reference="dZs-dW-qNJ"/>
-                                <exclude reference="6Jp-Lm-zVT"/>
-                                <exclude reference="OtR-fY-gcc"/>
-                                <exclude reference="b5g-Jx-XFT"/>
-                                <exclude reference="fEz-Kv-t31"/>
-                                <exclude reference="yuj-8I-YBa"/>
                                 <exclude reference="0fs-DG-TER"/>
                                 <exclude reference="1vC-as-esP"/>
                                 <exclude reference="2Ni-F5-T0w"/>
@@ -198,6 +188,16 @@
                                 <exclude reference="ghv-xz-aZx"/>
                                 <exclude reference="r2M-LI-PKv"/>
                                 <exclude reference="xlL-d1-un5"/>
+                                <exclude reference="FW8-yB-jzw"/>
+                                <exclude reference="iQN-1E-o01"/>
+                                <exclude reference="rKQ-Tv-YtR"/>
+                                <exclude reference="6Jp-Lm-zVT"/>
+                                <exclude reference="OtR-fY-gcc"/>
+                                <exclude reference="b5g-Jx-XFT"/>
+                                <exclude reference="fEz-Kv-t31"/>
+                                <exclude reference="yuj-8I-YBa"/>
+                                <exclude reference="8Fe-cv-Yf9"/>
+                                <exclude reference="dZs-dW-qNJ"/>
                                 <exclude reference="ATc-Tn-T62"/>
                                 <exclude reference="l3I-hK-9si"/>
                                 <exclude reference="zcv-pr-g3k"/>
@@ -210,16 +210,6 @@
                                 <include reference="qN4-b0-4hM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="FW8-yB-jzw"/>
-                                <include reference="iQN-1E-o01"/>
-                                <include reference="rKQ-Tv-YtR"/>
-                                <include reference="8Fe-cv-Yf9"/>
-                                <include reference="dZs-dW-qNJ"/>
-                                <include reference="6Jp-Lm-zVT"/>
-                                <exclude reference="OtR-fY-gcc"/>
-                                <exclude reference="b5g-Jx-XFT"/>
-                                <exclude reference="fEz-Kv-t31"/>
-                                <include reference="yuj-8I-YBa"/>
                                 <exclude reference="0fs-DG-TER"/>
                                 <exclude reference="1vC-as-esP"/>
                                 <exclude reference="2Ni-F5-T0w"/>
@@ -228,6 +218,16 @@
                                 <exclude reference="ghv-xz-aZx"/>
                                 <include reference="r2M-LI-PKv"/>
                                 <include reference="xlL-d1-un5"/>
+                                <exclude reference="FW8-yB-jzw"/>
+                                <include reference="iQN-1E-o01"/>
+                                <include reference="rKQ-Tv-YtR"/>
+                                <include reference="6Jp-Lm-zVT"/>
+                                <exclude reference="OtR-fY-gcc"/>
+                                <exclude reference="b5g-Jx-XFT"/>
+                                <exclude reference="fEz-Kv-t31"/>
+                                <include reference="yuj-8I-YBa"/>
+                                <include reference="8Fe-cv-Yf9"/>
+                                <include reference="dZs-dW-qNJ"/>
                                 <include reference="ATc-Tn-T62"/>
                                 <include reference="l3I-hK-9si"/>
                                 <exclude reference="zcv-pr-g3k"/>
@@ -263,37 +263,16 @@
         <!--Your Pulse-->
         <scene sceneID="znC-a8-4y0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9oR-iB-WXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="EoI-AL-LEY" customClass="ViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tcu-me-xLU">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U4y-tb-2Mv">
-                            <size key="itemSize" width="432.5" height="537"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardsCell" id="CS5-aa-Krg">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="432.5" height="537"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                    </collectionView>
                     <navigationItem key="navigationItem" title="Your Pulse" id="qWF-8c-ghm">
-                        <barButtonItem key="leftBarButtonItem" title="Reflection" id="M4h-TK-ul9"/>
-                        <barButtonItem key="rightBarButtonItem" title="Daily Question" id="WC4-Pp-eYr"/>
+                        <barButtonItem key="leftBarButtonItem" title="Reflection" id="M4h-TK-ul9">
+                            <connections>
+                                <segue destination="i8l-ig-1XX" kind="show" identifier="PulseToReflect" id="V3O-Jc-StJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="cards" destination="Tcu-me-xLU" id="xUZ-Ec-xBp"/>
-                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oR-iB-WXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1159" y="976.5"/>
         </scene>
@@ -470,16 +449,16 @@
                                 <exclude reference="UTg-Rd-rzr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6uF-WV-pdv"/>
-                                <exclude reference="rn9-q3-ZkC"/>
-                                <exclude reference="I7X-kF-QVf"/>
-                                <exclude reference="wj1-rT-tRS"/>
                                 <exclude reference="Gd6-6b-uRL"/>
                                 <exclude reference="S1B-Vn-asG"/>
                                 <exclude reference="oTw-F4-QPA"/>
+                                <exclude reference="6uF-WV-pdv"/>
+                                <exclude reference="rn9-q3-ZkC"/>
                                 <exclude reference="UwR-Ry-Df1"/>
                                 <exclude reference="tcG-f7-ZtK"/>
                                 <exclude reference="vbe-nV-nsl"/>
+                                <exclude reference="I7X-kF-QVf"/>
+                                <exclude reference="wj1-rT-tRS"/>
                                 <exclude reference="2Vv-tH-sh1"/>
                                 <exclude reference="vSP-FI-sST"/>
                             </mask>
@@ -493,16 +472,16 @@
                                 <include reference="UTg-Rd-rzr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6uF-WV-pdv"/>
-                                <include reference="rn9-q3-ZkC"/>
-                                <include reference="I7X-kF-QVf"/>
-                                <include reference="wj1-rT-tRS"/>
                                 <include reference="Gd6-6b-uRL"/>
                                 <include reference="S1B-Vn-asG"/>
                                 <exclude reference="oTw-F4-QPA"/>
+                                <include reference="6uF-WV-pdv"/>
+                                <include reference="rn9-q3-ZkC"/>
                                 <include reference="UwR-Ry-Df1"/>
                                 <include reference="tcG-f7-ZtK"/>
                                 <exclude reference="vbe-nV-nsl"/>
+                                <include reference="I7X-kF-QVf"/>
+                                <include reference="wj1-rT-tRS"/>
                                 <include reference="2Vv-tH-sh1"/>
                                 <include reference="vSP-FI-sST"/>
                             </mask>

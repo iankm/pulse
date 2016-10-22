@@ -1,12 +1,18 @@
 PODS:
   - Canvas (0.1.2)
+  - Koloda (3.1.2):
+    - pop (~> 1.0)
+  - pop (1.0.9)
 
 DEPENDENCIES:
   - Canvas (~> 0.1.2)
+  - Koloda (~> 3.1.2)
 
 SPEC CHECKSUMS:
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  Koloda: 5aee353329cd1605540f1215a4c1975481dc7a37
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-PODFILE CHECKSUM: 9ea87ad09056d48db6da2f6bc56190f0f1f8124f
+PODFILE CHECKSUM: c3ab1bcc911d9e0615c443df54665415a04ed663
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.1
