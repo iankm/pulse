@@ -11,10 +11,7 @@ import UIKit
 class PostTableViewCell: UITableViewCell {
     
     //Properties
-
     @IBOutlet weak var answerLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

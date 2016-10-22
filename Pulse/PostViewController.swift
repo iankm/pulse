@@ -9,28 +9,40 @@
 import UIKit
 
 class PostViewController: UITableViewController {
-    
-    @IBOutlet weak var navpulse: UINavigationItem!
-    
+
     var posts = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gradientLayer = CAGradientLayer()
+        let image = UIImage.imageFromColor(UIColor(red: 0, green: 0, blue: 0, alpha: 0.3))
+        self.navigationController?.navigationBar.setBackgroundImage(image, forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.barStyle = .BlackTranslucent
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        var bounds = self.navigationController?.navigationBar.bounds as CGRect!
+        bounds.offsetInPlace(dx: 0.0, dy: -20.0)
+        bounds.size.height = bounds.height + 20.0
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .ExtraLight))
+        visualEffectView.frame = bounds
+        visualEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        self.navigationController?.navigationBar.addSubview(visualEffectView)
+        self.navigationController?.navigationBar.sendSubviewToBack(visualEffectView)
         loadSamplePosts()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let mainColor = pulseOrange
+        let sdryColor = lighterOrange
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [sdryColor.CGColor, mainColor.CGColor]
+        let gradientLocations: [Float] = [0.0,0.66]
+        gradientLayer.locations = gradientLocations
+        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
 
     func loadSamplePosts() {
-        let post1 = Post(answer: "I am feeling lonely.", time: "11AM")!
-        let post2 = Post(answer: "I am feeling upset.", time: "7PM")!
-        
+        let post1 = Post(answer: "I am feeling great!")!
+        let post2 = Post(answer: "I am feeling okay.")!
         posts += [post1, post2]
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,12 +69,14 @@ class PostViewController: UITableViewController {
         let post = posts[indexPath.row]
         
         cell.answerLabel.text = post.answer
-        cell.timeLabel.text = post.time
         
-
         // Configure the cell...
 
         return cell
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return self.presentingViewController == nil ? UIStatusBarStyle.Default : UIStatusBarStyle.LightContent
     }
 
     /*
