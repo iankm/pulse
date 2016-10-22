@@ -12,26 +12,30 @@ var pulseOrange = UIColor(red: CGFloat(255/255.0),green: CGFloat(126/255.0),blue
 var lighterOrange = UIColor(red: CGFloat(255/255.0),green: CGFloat(181/255.0),blue: CGFloat(109/255.0),alpha: CGFloat(1.0))
 var white = UIColor(red: CGFloat(255/255.0),green: CGFloat(255/255.0),blue: CGFloat(255/255.0),alpha: CGFloat(1.0))
 var lightGray = UIColor(red: CGFloat(216/255.0),green: CGFloat(216/255.0),blue: CGFloat(216/255.0),alpha: CGFloat(1.0))
-let whiteTrans = UIColor.colorWithAlphaComponent(white)(0.5) as! CGColor
-let lgTrans = UIColor.colorWithAlphaComponent(lightGray)(0.5) as! CGColor
+let whiteTrans = UIColor.colorWithAlphaComponent(white)(0.8)
+let lgTrans = UIColor.colorWithAlphaComponent(lightGray)(0.8)
 let backColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
 
-class DailyQViewController: UIViewController {
+class DailyQViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var DQLabel: UILabel!
     @IBOutlet var AnswerLater: UIButton!
-    @IBOutlet weak var DQText: UITextField!
-    @IBOutlet weak var RText: UITextField!
+    @IBOutlet weak var DQText: UITextView!
+    @IBOutlet weak var RText: UITextView!
     let gradientLayer = CAGradientLayer()
     override func viewDidLoad() {
         super.viewDidLoad()
         //Set Text to white & remove background
         if RText != nil {
-            RText.attributedPlaceholder = NSAttributedString(string:"Type Here.", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            RText.delegate = self
+            RText.textColor = whiteTrans
+            RText.text = "Type Here."
             RText.backgroundColor = backColor
         }
         if DQText != nil {
-            DQText.attributedPlaceholder = NSAttributedString(string:"Type Here.", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            DQText.delegate = self
+            DQText.textColor = whiteTrans
+            DQText.text = "Type Here."
             DQText.backgroundColor = backColor
         }
         //Gradient for background
@@ -45,6 +49,28 @@ class DailyQViewController: UIViewController {
         self.navigationController?.navigationBar.hidden = true
     }
 
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == whiteTrans {
+            textView.text = nil
+            textView.textColor = white
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.textColor = whiteTrans
+            textView.text = "Type Here."
+        }
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
