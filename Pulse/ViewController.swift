@@ -12,14 +12,22 @@ import Koloda
 class ViewController: UIViewController {
     
     @IBOutlet weak var kolodaView: KolodaView!
+    let gradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let mainColor = pulseOrange
+        let sdryColor = lighterOrange
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [sdryColor.CGColor, mainColor.CGColor]
+        let gradientLocations: [Float] = [0.0,0.66]
+        gradientLayer.locations = gradientLocations
+        kolodaView.layer.insertSublayer(gradientLayer, atIndex: 0)
         kolodaView.dataSource = self
         kolodaView.delegate = self
     }
     
+    // Change Data Source to Pulse Feed Posts
     private var dataSource: Array<UIImage> = {
         var array: Array<UIImage> = []
         return array

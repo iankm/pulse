@@ -18,8 +18,6 @@
 		ACB549061C84B1FD007C1066 /* DailyQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB549051C84B1FD007C1066 /* DailyQViewController.swift */; };
 		ACB5490E1C84B1FD007C1066 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB5490C1C84B1FD007C1066 /* LaunchScreen.storyboard */; };
 		ACB549191C84B1FD007C1066 /* PulseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB549181C84B1FD007C1066 /* PulseTests.swift */; };
-		ACB549241C854C04007C1066 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB549231C854C04007C1066 /* PostViewController.swift */; };
-		ACB549281C854D28007C1066 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB549271C854D28007C1066 /* PostTableViewCell.swift */; };
 		ACF6B1D41CEA1F3A00EB48E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF6B1D21CEA1F3A00EB48E5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +48,6 @@
 		ACB549141C84B1FD007C1066 /* PulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB549181C84B1FD007C1066 /* PulseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseTests.swift; sourceTree = "<group>"; };
 		ACB5491A1C84B1FD007C1066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACB549231C854C04007C1066 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		ACB549271C854D28007C1066 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		ACF6B1D31CEA1F3A00EB48E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,8 +108,6 @@
 				ACB549031C84B1FD007C1066 /* AppDelegate.swift */,
 				AC7430C61DBA76620025F447 /* UIImageExtension.swift */,
 				ACB549051C84B1FD007C1066 /* DailyQViewController.swift */,
-				ACB549231C854C04007C1066 /* PostViewController.swift */,
-				ACB549271C854D28007C1066 /* PostTableViewCell.swift */,
 				ACB5490C1C84B1FD007C1066 /* LaunchScreen.storyboard */,
 				ACB5490F1C84B1FD007C1066 /* Info.plist */,
 				AC5E67591CE4FC7B009F9044 /* assets.xcassets */,
@@ -291,14 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB549241C854C04007C1066 /* PostViewController.swift in Sources */,
 				ACB549061C84B1FD007C1066 /* DailyQViewController.swift in Sources */,
 				AC7430C71DBA76620025F447 /* UIImageExtension.swift in Sources */,
 				ACB549041C84B1FD007C1066 /* AppDelegate.swift in Sources */,
 				AC5E67581CE3C6C1009F9044 /* Post.swift in Sources */,
 				AC3D80A21C8610F000EFB633 /* Question.swift in Sources */,
 				AC7430CF1DBBBB9A0025F447 /* ViewController.swift in Sources */,
-				ACB549281C854D28007C1066 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

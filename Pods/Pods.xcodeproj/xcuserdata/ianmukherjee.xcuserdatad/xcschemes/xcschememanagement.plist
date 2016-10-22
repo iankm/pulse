@@ -4,12 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Canvas.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Koloda.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,12 +42,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59B9D180BB6A2381EEFAD3997AE76781</key>
+		<key>2C8AA1BAF35413BDB954A1DF93576ED1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7129FAB61478FA70223DADF4921468CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>80CBCC225074FD190F9BEA2940592423</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97469C4CB6D14EAEBEC7F2ABBCA5C1C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,35 +1,24 @@
 PODS:
-  - Bolts/Tasks (1.2.0)
+  - Bolts/Tasks (1.8.4)
   - Canvas (0.1.2)
-<<<<<<< HEAD
   - Koloda (3.1.2):
     - pop (~> 1.0)
+  - Parse (1.14.2):
+    - Bolts/Tasks (~> 1.8)
   - pop (1.0.9)
 
 DEPENDENCIES:
   - Canvas (~> 0.1.2)
   - Koloda (~> 3.1.2)
-=======
-  - Parse (1.7.5.3):
-    - Bolts/Tasks (>= 1.2.0)
-
-DEPENDENCIES:
-  - Canvas (~> 0.1.2)
   - Parse
->>>>>>> d853f83c0c297e59b7eed2bfa2b092344246bee1
 
 SPEC CHECKSUMS:
-  Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
-<<<<<<< HEAD
   Koloda: 5aee353329cd1605540f1215a4c1975481dc7a37
+  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-PODFILE CHECKSUM: c3ab1bcc911d9e0615c443df54665415a04ed663
-=======
-  Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
-
-PODFILE CHECKSUM: e04bacd25e2a1c13e9b766b60f011b72d9a6c8e3
->>>>>>> d853f83c0c297e59b7eed2bfa2b092344246bee1
+PODFILE CHECKSUM: c6cee249c4a3fbcbdcfc2a8f23cd757ffd6d1192
 
 COCOAPODS: 1.1.1

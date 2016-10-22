@@ -264,6 +264,15 @@
         <scene sceneID="znC-a8-4y0">
             <objects>
                 <viewController id="EoI-AL-LEY" customClass="ViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="btM-Ho-Qf4"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Ip-gN-8QY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Idm-Eo-hXV" customClass="KolodaView" customModule="Koloda">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <navigationItem key="navigationItem" title="Your Pulse" id="qWF-8c-ghm">
                         <barButtonItem key="leftBarButtonItem" title="Reflection" id="M4h-TK-ul9">
                             <connections>
@@ -271,6 +280,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="kolodaView" destination="Idm-Eo-hXV" id="Zji-Uu-dH0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oR-iB-WXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -501,6 +513,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mdr-Mw-lqY"/>
+        <segue reference="s6N-9N-Xud"/>
     </inferredMetricsTieBreakers>
 </document>
