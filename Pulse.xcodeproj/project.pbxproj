@@ -18,6 +18,8 @@
 		ACB549061C84B1FD007C1066 /* DailyQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB549051C84B1FD007C1066 /* DailyQViewController.swift */; };
 		ACB5490E1C84B1FD007C1066 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB5490C1C84B1FD007C1066 /* LaunchScreen.storyboard */; };
 		ACB549191C84B1FD007C1066 /* PulseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB549181C84B1FD007C1066 /* PulseTests.swift */; };
+		ACDEE21B1DBBD64D001C8D77 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDEE2191DBBD64D001C8D77 /* iCarousel.m */; };
+		ACDEE21F1DBBFB94001C8D77 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDEE21E1DBBFB94001C8D77 /* QuartzCore.framework */; };
 		ACF6B1D41CEA1F3A00EB48E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF6B1D21CEA1F3A00EB48E5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,10 @@
 		ACB549141C84B1FD007C1066 /* PulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB549181C84B1FD007C1066 /* PulseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseTests.swift; sourceTree = "<group>"; };
 		ACB5491A1C84B1FD007C1066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACDEE2181DBBD64D001C8D77 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		ACDEE2191DBBD64D001C8D77 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		ACDEE21D1DBBD8B6001C8D77 /* Pulse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pulse-Bridging-Header.h"; sourceTree = "<group>"; };
+		ACDEE21E1DBBFB94001C8D77 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ACF6B1D31CEA1F3A00EB48E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDEE21F1DBBFB94001C8D77 /* QuartzCore.framework in Frameworks */,
 				94DA99F1056175AECB1C1EDB /* Pods_Pulse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +80,7 @@
 		796230E6025C95182DA0AB33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ACDEE21E1DBBFB94001C8D77 /* QuartzCore.framework */,
 				A7DDA9CD0DE6AE99834E01CC /* Pods_Pulse.framework */,
 			);
 			name = Frameworks;
@@ -81,6 +89,7 @@
 		ACB548F71C84B1FD007C1066 = {
 			isa = PBXGroup;
 			children = (
+				ACDEE21A1DBBD64D001C8D77 /* iCarousel */,
 				ACB549021C84B1FD007C1066 /* Pulse */,
 				ACB549171C84B1FD007C1066 /* PulseTests */,
 				ACB549011C84B1FD007C1066 /* Products */,
@@ -102,12 +111,13 @@
 			isa = PBXGroup;
 			children = (
 				ACF6B1D21CEA1F3A00EB48E5 /* Main.storyboard */,
+				ACDEE21D1DBBD8B6001C8D77 /* Pulse-Bridging-Header.h */,
 				AC7430CE1DBBBB9A0025F447 /* ViewController.swift */,
+				ACB549051C84B1FD007C1066 /* DailyQViewController.swift */,
 				AC5E67571CE3C6C1009F9044 /* Post.swift */,
 				AC3D80A11C8610F000EFB633 /* Question.swift */,
 				ACB549031C84B1FD007C1066 /* AppDelegate.swift */,
 				AC7430C61DBA76620025F447 /* UIImageExtension.swift */,
-				ACB549051C84B1FD007C1066 /* DailyQViewController.swift */,
 				ACB5490C1C84B1FD007C1066 /* LaunchScreen.storyboard */,
 				ACB5490F1C84B1FD007C1066 /* Info.plist */,
 				AC5E67591CE4FC7B009F9044 /* assets.xcassets */,
@@ -123,6 +133,16 @@
 			);
 			path = PulseTests;
 			sourceTree = "<group>";
+		};
+		ACDEE21A1DBBD64D001C8D77 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				ACDEE2181DBBD64D001C8D77 /* iCarousel.h */,
+				ACDEE2191DBBD64D001C8D77 /* iCarousel.m */,
+			);
+			name = iCarousel;
+			path = "/Users/ianmukherjee/Downloads/iCarousel-master/Examples/Swift Example/../../iCarousel";
+			sourceTree = "<absolute>";
 		};
 		E79620ED39BC36199581608E /* Pods */ = {
 			isa = PBXGroup;
@@ -290,6 +310,7 @@
 				ACB549041C84B1FD007C1066 /* AppDelegate.swift in Sources */,
 				AC5E67581CE3C6C1009F9044 /* Post.swift in Sources */,
 				AC3D80A21C8610F000EFB633 /* Question.swift in Sources */,
+				ACDEE21B1DBBD64D001C8D77 /* iCarousel.m in Sources */,
 				AC7430CF1DBBBB9A0025F447 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +446,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = circle.Pulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pulse/Pulse-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -437,6 +459,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = circle.Pulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pulse/Pulse-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -260,18 +260,72 @@
             </objects>
             <point key="canvasLocation" x="1159" y="288.75"/>
         </scene>
-        <!--Your Pulse-->
+        <!--Data Source-->
         <scene sceneID="znC-a8-4y0">
             <objects>
                 <viewController id="EoI-AL-LEY" customClass="ViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="btM-Ho-Qf4"/>
-                        <viewControllerLayoutGuide type="bottom" id="3Ip-gN-8QY"/>
+                        <viewControllerLayoutGuide type="top" id="DeQ-78-ZVM"/>
+                        <viewControllerLayoutGuide type="bottom" id="oEW-RZ-FAR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Idm-Eo-hXV" customClass="KolodaView" customModule="Koloda">
+                    <view key="view" contentMode="scaleToFill" id="mNK-5E-Zaa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LV-MA-t8p" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="1JD-Qw-AFK">
+                                        <variation key="heightClass=regular" constant="736"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="240" id="oen-3s-Le6">
+                                        <variation key="heightClass=regular" constant="600"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1JD-Qw-AFK"/>
+                                        <exclude reference="oen-3s-Le6"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="1JD-Qw-AFK"/>
+                                        <include reference="oen-3s-Le6"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="EoI-AL-LEY" id="7RU-VI-jlZ"/>
+                                    <outlet property="delegate" destination="EoI-AL-LEY" id="dQr-C1-zoy"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2LV-MA-t8p" firstAttribute="centerY" secondItem="mNK-5E-Zaa" secondAttribute="centerY" id="gyf-jx-f0g">
+                                <variation key="heightClass=regular" constant="32"/>
+                            </constraint>
+                            <constraint firstItem="2LV-MA-t8p" firstAttribute="centerX" secondItem="mNK-5E-Zaa" secondAttribute="centerX" id="myj-ZF-Sqy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="2LV-MA-t8p"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="gyf-jx-f0g"/>
+                                <exclude reference="myj-ZF-Sqy"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="2LV-MA-t8p"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="gyf-jx-f0g"/>
+                                <include reference="myj-ZF-Sqy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Your Pulse" id="qWF-8c-ghm">
                         <barButtonItem key="leftBarButtonItem" title="Reflection" id="M4h-TK-ul9">
@@ -281,7 +335,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="kolodaView" destination="Idm-Eo-hXV" id="Zji-Uu-dH0"/>
+                        <outlet property="carousel" destination="2LV-MA-t8p" id="Kif-9k-2FK"/>
+                        <outlet property="container" destination="mNK-5E-Zaa" id="fpQ-bU-DKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oR-iB-WXy" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,20 +1,32 @@
 //
 //  ViewController.swift
-//  
+//  SwiftExample
 //
-//  Created by Ian Kumar Mukherjee on 10/22/16.
-//
+//  Created by Nick Lockwood on 30/07/2014.
+//  Copyright (c) 2014 Charcoal Design. All rights reserved.
 //
 
-import Foundation
-import Koloda
+import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, iCarouselDataSource, iCarouselDelegate
+{
+    var items: [Int] = []
     
-    @IBOutlet weak var kolodaView: KolodaView!
+    @IBOutlet var container: UIView!
+    @IBOutlet var carousel: iCarousel!
+    
     let gradientLayer = CAGradientLayer()
     
-    override func viewDidLoad() {
+    override func awakeFromNib()
+    {
+        super.awakeFromNib()
+        for i in 0...99
+        {
+            items.append(i)
+        }
+    }
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         let mainColor = pulseOrange
         let sdryColor = lighterOrange
@@ -22,44 +34,59 @@ class ViewController: UIViewController {
         gradientLayer.colors = [sdryColor.CGColor, mainColor.CGColor]
         let gradientLocations: [Float] = [0.0,0.66]
         gradientLayer.locations = gradientLocations
-        kolodaView.layer.insertSublayer(gradientLayer, atIndex: 0)
-        kolodaView.dataSource = self
-        kolodaView.delegate = self
+        container.layer.insertSublayer(gradientLayer, atIndex: 0)
+        carousel.type = .Wheel
+        carousel.reloadData()
     }
     
-    // Change Data Source to Pulse Feed Posts
-    private var dataSource: Array<UIImage> = {
-        var array: Array<UIImage> = []
-        return array
-    }()
+    func numberOfItemsInCarousel(carousel: iCarousel) -> Int
+    {
+        return items.count
+    }
+    
+    func carousel(carousel: iCarousel, viewForItemAtIndex index: Int, reusingView view: UIView?) -> UIView
+    {
+        var label: UILabel
+        var itemView: UIImageView
+        
+        //create new view if no view is available for recycling
+        if (view == nil)
+        {
+            itemView = UIImageView(frame:CGRect(x:0, y:0, width:200, height:200))
+            itemView.image = UIImage(named: "page.png")
+            itemView.contentMode = .Center
+            label = UILabel(frame:itemView.bounds)
+            label.backgroundColor = UIColor.clearColor()
+            label.textAlignment = .Center
+            label.font = label.font.fontWithSize(17)
+            label.tag = 1
+            itemView.addSubview(label)
+        }
+        else
+        {
+            //get a reference to the label in the recycled view
+            itemView = view as! UIImageView;
+            label = itemView.viewWithTag(1) as! UILabel!
+        }
+        
+        //set item label
+        //remember to always set any properties of your carousel item
+        //views outside of the `if (view == nil) {...}` check otherwise
+        //you'll get weird issues with carousel item content appearing
+        //in the wrong place in the carousel
+        label.text = "\(items[index])"
+        
+        return itemView
+    }
+    
+    func carousel(carousel: iCarousel, valueForOption option: iCarouselOption, withDefault value: CGFloat) -> CGFloat
+    {
+        if (option == .Spacing)
+        {
+            return value * 1.1
+        }
+        return value
+    }
     
 }
 
-extension ViewController: KolodaViewDelegate {
-    
-    func kolodaDidRunOutOfCards(koloda: KolodaView) {
-        dataSource.insert(UIImage(named: "Suck A Dick")!, atIndex: kolodaView.currentCardIndex - 1)
-        let position = kolodaView.currentCardIndex
-        kolodaView.insertCardAtIndexRange(position...position, animated: true)
-    }
-    
-    func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://yalantis.com/")!)
-    }
-}
-
-extension ViewController: KolodaViewDataSource {
-    
-    func kolodaNumberOfCards(koloda:KolodaView) -> UInt {
-        return UInt(dataSource.count)
-    }
-    
-    func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
-        return UIImageView(image: dataSource[Int(index)])
-    }
-    
-    func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
-        return NSBundle.mainBundle().loadNibNamed("OverlayView",
-                                                  owner: self, options: nil)[0] as? OverlayView
-    }
-}
