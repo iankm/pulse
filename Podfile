@@ -3,4 +3,6 @@ project  'Pulse.xcodeproj'
 use_frameworks!
 target "Pulse" do
   pod 'Canvas', '~> 0.1.2'
+  pod 'Parse'
 end
+

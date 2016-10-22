@@ -1,12 +1,18 @@
 PODS:
+  - Bolts/Tasks (1.2.0)
   - Canvas (0.1.2)
+  - Parse (1.7.5.3):
+    - Bolts/Tasks (>= 1.2.0)
 
 DEPENDENCIES:
   - Canvas (~> 0.1.2)
+  - Parse
 
 SPEC CHECKSUMS:
+  Bolts: d176cb1e0012175589e389a9db49b85e27787576
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
 
-PODFILE CHECKSUM: 9ea87ad09056d48db6da2f6bc56190f0f1f8124f
+PODFILE CHECKSUM: e04bacd25e2a1c13e9b766b60f011b72d9a6c8e3
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.1
