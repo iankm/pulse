@@ -259,6 +259,40 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LV-MA-t8p" customClass="iCarousel">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Reflection" translatesAutoresizingMaskIntoConstraints="NO" id="8m5-tJ-huf">
+                                        <rect key="frame" x="0.0" y="-128" width="128" height="128"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="7Wb-rM-oso">
+                                                <variation key="heightClass=regular" constant="67"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="51" id="Rgx-aI-yph">
+                                                <variation key="heightClass=regular" constant="67"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="51" id="TJY-a7-hcJ">
+                                                <variation key="heightClass=regular" constant="30"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="51" id="ujk-Jj-LyU">
+                                                <variation key="heightClass=regular" constant="30"/>
+                                            </constraint>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="7Wb-rM-oso"/>
+                                                <exclude reference="Rgx-aI-yph"/>
+                                                <exclude reference="TJY-a7-hcJ"/>
+                                                <exclude reference="ujk-Jj-LyU"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <exclude reference="7Wb-rM-oso"/>
+                                                <exclude reference="Rgx-aI-yph"/>
+                                                <include reference="TJY-a7-hcJ"/>
+                                                <include reference="ujk-Jj-LyU"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your Pulse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-O1-dSa">
                                         <rect key="frame" x="189" y="58" width="222" height="51"/>
                                         <constraints>
@@ -288,8 +322,17 @@
                                         <variation key="heightClass=regular" constant="800"/>
                                     </constraint>
                                     <constraint firstItem="eRB-O1-dSa" firstAttribute="centerX" secondItem="2LV-MA-t8p" secondAttribute="centerX" id="2gm-zZ-EKf"/>
+                                    <constraint firstItem="eRB-O1-dSa" firstAttribute="leading" secondItem="8m5-tJ-huf" secondAttribute="trailing" constant="54" id="GLr-o1-Zuw">
+                                        <variation key="heightClass=regular" constant="10"/>
+                                    </constraint>
+                                    <constraint firstItem="eRB-O1-dSa" firstAttribute="trailing" secondItem="8m5-tJ-huf" secondAttribute="trailing" id="L4W-4f-08b"/>
+                                    <constraint firstItem="8m5-tJ-huf" firstAttribute="top" secondItem="2LV-MA-t8p" secondAttribute="top" constant="120" id="ZJH-5M-726"/>
+                                    <constraint firstItem="eRB-O1-dSa" firstAttribute="centerY" secondItem="8m5-tJ-huf" secondAttribute="centerY" id="axa-th-GPS"/>
                                     <constraint firstItem="eRB-O1-dSa" firstAttribute="top" secondItem="2LV-MA-t8p" secondAttribute="top" constant="30" id="c5H-xS-duW">
                                         <variation key="heightClass=regular" constant="80"/>
+                                    </constraint>
+                                    <constraint firstItem="eRB-O1-dSa" firstAttribute="leading" secondItem="8m5-tJ-huf" secondAttribute="leading" id="c7C-wz-aAU">
+                                        <variation key="heightClass=regular" constant="105"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="240" id="oen-3s-Le6">
                                         <variation key="heightClass=regular" constant="600"/>
@@ -300,25 +343,37 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
+                                        <exclude reference="8m5-tJ-huf"/>
                                         <exclude reference="eRB-O1-dSa"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="1JD-Qw-AFK"/>
                                         <exclude reference="oen-3s-Le6"/>
+                                        <exclude reference="ZJH-5M-726"/>
                                         <exclude reference="2gm-zZ-EKf"/>
+                                        <exclude reference="GLr-o1-Zuw"/>
+                                        <exclude reference="L4W-4f-08b"/>
+                                        <exclude reference="axa-th-GPS"/>
                                         <exclude reference="c5H-xS-duW"/>
+                                        <exclude reference="c7C-wz-aAU"/>
                                         <exclude reference="ukV-K2-Lt4"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="subviews">
+                                        <include reference="8m5-tJ-huf"/>
                                         <include reference="eRB-O1-dSa"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="1JD-Qw-AFK"/>
                                         <include reference="oen-3s-Le6"/>
+                                        <exclude reference="ZJH-5M-726"/>
                                         <include reference="2gm-zZ-EKf"/>
+                                        <include reference="GLr-o1-Zuw"/>
+                                        <exclude reference="L4W-4f-08b"/>
+                                        <include reference="axa-th-GPS"/>
                                         <exclude reference="c5H-xS-duW"/>
+                                        <exclude reference="c7C-wz-aAU"/>
                                         <include reference="ukV-K2-Lt4"/>
                                     </mask>
                                 </variation>
@@ -591,4 +646,7 @@
             <point key="canvasLocation" x="1913" y="288.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Reflection" width="128" height="128"/>
+    </resources>
 </document>
