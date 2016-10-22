@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController, iCarouselDataSource, iCarouselDelegate
 {
     var items: [Int] = []
@@ -25,6 +27,7 @@ class ViewController: UIViewController, iCarouselDataSource, iCarouselDelegate
             items.append(i)
         }
     }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -52,11 +55,13 @@ class ViewController: UIViewController, iCarouselDataSource, iCarouselDelegate
         //create new view if no view is available for recycling
         if (view == nil)
         {
-            itemView = UIImageView(frame:CGRect(x:0, y:0, width:200, height:200))
+            itemView = UIImageView(frame:CGRect(x:0, y:0, width:300, height:250))
             itemView.image = UIImage(named: "page.png")
+            itemView.layer.cornerRadius = 10
             itemView.contentMode = .Center
+            itemView.clipsToBounds = true
             label = UILabel(frame:itemView.bounds)
-            label.backgroundColor = UIColor.clearColor()
+            label.backgroundColor = whiteTrans
             label.textAlignment = .Center
             label.font = label.font.fontWithSize(17)
             label.tag = 1
@@ -83,7 +88,15 @@ class ViewController: UIViewController, iCarouselDataSource, iCarouselDelegate
     {
         if (option == .Spacing)
         {
-            return value * 1.1
+            return value
+        }
+        else if (option == .Radius)
+        {
+            return value * 1.5
+        }
+        else if (option == .Wrap)
+        {
+            return 1.0
         }
         return value
     }

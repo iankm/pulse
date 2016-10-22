@@ -40,7 +40,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="bJg-hb-J7p" kind="show" identifier="DQtoPulse" id="mdr-Mw-lqY"/>
+                                    <segue destination="EoI-AL-LEY" kind="show" id="M1p-gC-CZ8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Daily Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSg-hr-V0b">
@@ -244,22 +244,6 @@
             </objects>
             <point key="canvasLocation" x="383" y="288.75"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tJj-yd-rJb">
-            <objects>
-                <navigationController id="bJg-hb-J7p" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X8L-Cz-n3l">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="EoI-AL-LEY" kind="relationship" relationship="rootViewController" id="Czk-vW-H9b"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X9A-wY-0Fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1159" y="288.75"/>
-        </scene>
         <!--Data Source-->
         <scene sceneID="znC-a8-4y0">
             <objects>
@@ -274,25 +258,68 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LV-MA-t8p" customClass="iCarousel">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your Pulse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-O1-dSa">
+                                        <rect key="frame" x="189" y="58" width="222" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="222" id="knZ-ok-kSL"/>
+                                            <constraint firstAttribute="height" constant="51" id="z4P-SA-RRr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="knZ-ok-kSL"/>
+                                                <exclude reference="z4P-SA-RRr"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="knZ-ok-kSL"/>
+                                                <include reference="z4P-SA-RRr"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="1JD-Qw-AFK">
-                                        <variation key="heightClass=regular" constant="736"/>
+                                        <variation key="heightClass=regular" constant="800"/>
+                                    </constraint>
+                                    <constraint firstItem="eRB-O1-dSa" firstAttribute="centerX" secondItem="2LV-MA-t8p" secondAttribute="centerX" id="2gm-zZ-EKf"/>
+                                    <constraint firstItem="eRB-O1-dSa" firstAttribute="top" secondItem="2LV-MA-t8p" secondAttribute="top" constant="30" id="c5H-xS-duW">
+                                        <variation key="heightClass=regular" constant="80"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="240" id="oen-3s-Le6">
                                         <variation key="heightClass=regular" constant="600"/>
                                     </constraint>
+                                    <constraint firstItem="eRB-O1-dSa" firstAttribute="top" secondItem="2LV-MA-t8p" secondAttribute="top" constant="100" id="ukV-K2-Lt4">
+                                        <variation key="heightClass=regular" constant="120"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="eRB-O1-dSa"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <exclude reference="1JD-Qw-AFK"/>
                                         <exclude reference="oen-3s-Le6"/>
+                                        <exclude reference="2gm-zZ-EKf"/>
+                                        <exclude reference="c5H-xS-duW"/>
+                                        <exclude reference="ukV-K2-Lt4"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="eRB-O1-dSa"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <include reference="1JD-Qw-AFK"/>
                                         <include reference="oen-3s-Le6"/>
+                                        <include reference="2gm-zZ-EKf"/>
+                                        <exclude reference="c5H-xS-duW"/>
+                                        <include reference="ukV-K2-Lt4"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -304,7 +331,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2LV-MA-t8p" firstAttribute="centerY" secondItem="mNK-5E-Zaa" secondAttribute="centerY" id="gyf-jx-f0g">
-                                <variation key="heightClass=regular" constant="32"/>
+                                <variation key="heightClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="2LV-MA-t8p" firstAttribute="centerX" secondItem="mNK-5E-Zaa" secondAttribute="centerX" id="myj-ZF-Sqy"/>
                         </constraints>
@@ -341,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oR-iB-WXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1159" y="976.5"/>
+            <point key="canvasLocation" x="1147" y="288.75"/>
         </scene>
         <!--Reflection-->
         <scene sceneID="AEj-mY-Ghb">
@@ -383,9 +410,6 @@
                                         <include reference="zRY-Si-6eu"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="bJg-hb-J7p" kind="show" id="s6N-9N-Xud"/>
-                                </connections>
                             </button>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cw2-5N-N1p">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -463,7 +487,7 @@
                                     <constraint firstAttribute="width" constant="304" id="yvW-Vx-uaV"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -567,7 +591,4 @@
             <point key="canvasLocation" x="1913" y="288.75"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="s6N-9N-Xud"/>
-    </inferredMetricsTieBreakers>
 </document>

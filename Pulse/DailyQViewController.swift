@@ -10,7 +10,8 @@ import UIKit
 
 var pulseOrange = UIColor(red: CGFloat(255/255.0),green: CGFloat(126/255.0),blue: CGFloat(59/255.0),alpha: CGFloat(1.0))
 var lighterOrange = UIColor(red: CGFloat(255/255.0),green: CGFloat(181/255.0),blue: CGFloat(109/255.0),alpha: CGFloat(1.0))
-var white = UIColor(red: CGFloat(255/255.0),green: CGFloat(255/255.0),blue: CGFloat(255/255.0),alpha: CGFloat(1.0))
+var white = UIColor(red: CGFloat(255/255.0),green: CGFloat(255.0/255.0),blue: CGFloat(255.0/255.0),alpha: CGFloat(1.0))
+var black = UIColor(red: CGFloat(0/255.0),green: CGFloat(0/255.0),blue: CGFloat(0/255.0),alpha: CGFloat(1.0))
 var lightGray = UIColor(red: CGFloat(216/255.0),green: CGFloat(216/255.0),blue: CGFloat(216/255.0),alpha: CGFloat(1.0))
 let whiteTrans = UIColor.colorWithAlphaComponent(white)(0.8)
 let lgTrans = UIColor.colorWithAlphaComponent(lightGray)(0.8)
