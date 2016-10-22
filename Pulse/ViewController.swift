@@ -10,13 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    @IBOutlet weak var cards: UICollectionView!
+    @IBOutlet var cards: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-    
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,11 +61,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         targetContentOffset.memory.x = CGFloat(currentOffSet)
         scrollView.setContentOffset(CGPointMake(CGFloat(newTargetOffset), 0), animated: true)
         
-    }
-
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
     }
     
 }
