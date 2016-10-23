@@ -7,31 +7,76 @@
 //
 
 import UIKit
+import Parse
 
 var pulseOrange = UIColor(red: CGFloat(255/255.0),green: CGFloat(126/255.0),blue: CGFloat(59/255.0),alpha: CGFloat(1.0))
 var lighterOrange = UIColor(red: CGFloat(255/255.0),green: CGFloat(181/255.0),blue: CGFloat(109/255.0),alpha: CGFloat(1.0))
-var white = UIColor(red: CGFloat(255/255.0),green: CGFloat(255/255.0),blue: CGFloat(255/255.0),alpha: CGFloat(1.0))
+var white = UIColor(red: CGFloat(255/255.0),green: CGFloat(255.0/255.0),blue: CGFloat(255.0/255.0),alpha: CGFloat(1.0))
+var black = UIColor(red: CGFloat(0/255.0),green: CGFloat(0/255.0),blue: CGFloat(0/255.0),alpha: CGFloat(1.0))
 var lightGray = UIColor(red: CGFloat(216/255.0),green: CGFloat(216/255.0),blue: CGFloat(216/255.0),alpha: CGFloat(1.0))
-let whiteTrans = UIColor.colorWithAlphaComponent(white)(0.5) as! CGColor
-let lgTrans = UIColor.colorWithAlphaComponent(lightGray)(0.5) as! CGColor
+let whiteTrans = UIColor.colorWithAlphaComponent(white)(0.8)
+let lgTrans = UIColor.colorWithAlphaComponent(lightGray)(0.8)
 let backColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
 
-class DailyQViewController: UIViewController {
+class DailyQViewController: UIViewController, UITextViewDelegate {
     
-    @IBOutlet weak var DQLabel: UILabel!
-    @IBOutlet var AnswerLater: UIButton!
-    @IBOutlet weak var DQText: UITextField!
-    @IBOutlet weak var RText: UITextField!
+    @IBOutlet var DQLabel: UILabel!
+    @IBOutlet var DQText: UITextView!
+    @IBOutlet var RText: UITextView!
+    func segueSwitch(identifier: String, sender: UIButton) {
+        performSegueWithIdentifier(identifier,sender: sender)
+    }
+    @IBAction func Submit(sender: UIButton) {
+        print("Attempting adding response.")
+        PFGeoPoint.geoPointForCurrentLocationInBackground { (geopoint, error) in
+            if !(error != nil) {
+                print("PFGeoPoint created")
+                if let geoPoint = geopoint {
+                    print("Starting to create post")
+                    let post = PFObject(className: "Posts")
+                    post.setObject(self.DQText.text, forKey: "message")
+                    post.setObject(geoPoint, forKey: "location")
+                    post.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+                        if succeeded {
+                            print("SUCCEEDED")
+                        }
+                        else {
+                            print("Error: \(error)")
+                        }
+                    }
+                }
+            } else {
+                print("Error adding response!")
+            }
+        }
+        /*let post = PFObject(className: "Posts")
+        post.setObject(self.DQText.text, forKey: "message")
+        post.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+            if succeeded {
+                print("SUCCEEDED")
+            }
+            else {
+                print("Error: \(error)")
+            }
+        }*/
+        segueSwitch("DQToPulse", sender: sender)
+    }
+        
+        
     let gradientLayer = CAGradientLayer()
     override func viewDidLoad() {
         super.viewDidLoad()
         //Set Text to white & remove background
         if RText != nil {
-            RText.attributedPlaceholder = NSAttributedString(string:"Type Here.", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            RText.delegate = self
+            RText.textColor = whiteTrans
+            RText.text = "Type Here."
             RText.backgroundColor = backColor
         }
         if DQText != nil {
-            DQText.attributedPlaceholder = NSAttributedString(string:"Type Here.", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            DQText.delegate = self
+            DQText.textColor = whiteTrans
+            DQText.text = "Type Here."
             DQText.backgroundColor = backColor
         }
         //Gradient for background
@@ -44,7 +89,29 @@ class DailyQViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
         self.navigationController?.navigationBar.hidden = true
     }
-
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == whiteTrans {
+            textView.text = nil
+            textView.textColor = white
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.textColor = whiteTrans
+            textView.text = "Type Here."
+        }
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
